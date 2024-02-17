@@ -9,7 +9,9 @@
     "lint": "next lint",
     "db:seed": "npx prisma db seed",
     "db:push": "npx prisma db push",
-    "generate": "npx prisma generate"
+    "db:generate": "npx prisma generate",
+    "db:start": "npx prisma db push && npx prisma db seed && npx prisma generate",
+    "branch": "git checkout example-1-solution"
   },
   "prisma": {
     "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
