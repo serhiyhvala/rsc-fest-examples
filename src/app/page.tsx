@@ -1,3 +1,17 @@
+"use client";
+
+import styled from "styled-components";
+
+const Container = styled.div`
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+`;
+
 export default function HomePage() {
-  return <span>Home page</span>;
+  return (
+    <Container>
+      <span>Home page</span>
+    </Container>
+  );
 }
