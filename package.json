@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "branch": "git branch example-4-solution"
+    "branch": "git checkout example-5"
   },
   "dependencies": {
     "date-fns": "^3.3.1",
