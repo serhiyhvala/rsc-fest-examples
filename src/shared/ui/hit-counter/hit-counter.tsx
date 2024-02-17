@@ -1,11 +1,7 @@
-import styles from "./hit-counter.module.scss";
 import { prisma } from "@/shared/db";
-import { useState } from "react";
-import clsx from "clsx";
+import { Censored } from "@/shared/ui/censored/censored";
 
 export const HitCounter = async () => {
-  const [censored, setCensored] = useState(true);
-
   const page = await prisma.page.update({
     where: {
       pageTitle: "First Page",
@@ -15,12 +11,5 @@ export const HitCounter = async () => {
     },
   });
 
-  return (
-    <button
-      onClick={() => setCensored(!censored)}
-      className={clsx(styles.button, { [styles.censored]: censored })}
-    >
-      {page?.viewsCount}
-    </button>
-  );
+  return <Censored count={page?.viewsCount} />;
 };
