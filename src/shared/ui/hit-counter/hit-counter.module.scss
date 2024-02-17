@@ -2,3 +2,7 @@
   all: unset;
   cursor: pointer;
 }
+
+.censored {
+  filter: blur(3px);
+}
