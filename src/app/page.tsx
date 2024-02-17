@@ -15,12 +15,15 @@ console.log(hello, "my old friend")
 
   return (
     <div className={appStyles.container}>
-      <button onClick={() => setIsVisible(true)} className={appStyles.button}>
-        Show me Code
-      </button>
-      <Code lang="js" title="example.js">
-        {myCode}
-      </Code>
+      {!visible ? (
+        <button onClick={() => setIsVisible(true)} className={appStyles.button}>
+          Show me Code
+        </button>
+      ) : (
+        <Code lang="js" title="example.js">
+          {myCode}
+        </Code>
+      )}
     </div>
   );
 }
