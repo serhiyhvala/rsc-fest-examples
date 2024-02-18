@@ -1,5 +1,6 @@
 import { appStyles } from "@/shared/styles";
 import { Comments } from "@/widgets/comments";
+import { Suspense } from "react";
 
 export default function PostPage() {
   return (
@@ -18,7 +19,9 @@ export default function PostPage() {
           </p>
         ))}
       </div>
-      <Comments />
+      <Suspense fallback="Loading...">
+        <Comments />
+      </Suspense>
     </div>
   );
 }
