@@ -1,0 +1,10 @@
+.link {
+  transition: all ease-in .2s;
+  &:hover {
+    color: #cd5c5c;
+  }
+}
+
+.active {
+  color: #cd5c5c;
+}

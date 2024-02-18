@@ -1,3 +1,5 @@
+import { Categories } from "@/widgets/categories";
+
 export default function HomePage() {
-  return <span>Home page</span>;
+  return "HOME";
 }

@@ -7,5 +7,27 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("NEXT_PUBLIC_DATABASE_URL")
+}
+
+model Product {
+  id         String   @id @default(uuid())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  title      String   @unique
+  price      Int
+  image_url  String
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  title    String
+  slug     String
+  products Product[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
