@@ -11,5 +11,5 @@ export const HitCounter = async () => {
     },
   });
 
-  return <Censored count={page?.viewsCount} />;
+  return <Censored>{page?.viewsCount}</Censored>;
 };

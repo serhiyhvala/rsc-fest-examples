@@ -2,20 +2,20 @@
 
 import clsx from "clsx";
 import styles from "./censored.module.scss";
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 
 interface CensoredPropsI {
-  count: number;
+  children: ReactNode;
 }
 
-export const Censored: FC<CensoredPropsI> = ({ count }) => {
+export const Censored: FC<CensoredPropsI> = ({ children }) => {
   const [censored, setCensored] = useState(true);
   return (
     <button
       onClick={() => setCensored(!censored)}
       className={clsx(styles.button, { [styles.censored]: censored })}
     >
-      {count}
+      {children}
     </button>
   );
 };
